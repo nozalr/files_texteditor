@@ -13,6 +13,14 @@ Features:
  - Syntax checking
  - Responsive design (optimised on mobile and desktop)
 
+## Fork motivation (Group4Layers)
+
+Group4Layers® organization uses Emacs and Vim keybindings in many applications, and therefore, Nextcloud should provide a simple editor with these features.
+
+To see more details about the modification, check out the `stable14` branch and its README.
+
+Currently it is supported for Nextcloud 14, but it can easily be merged with other versions (master, stable13, etc).
+
 ## Install
 Simply copy the `files_texteditor` folder into the `apps` directory and enable the app within the Nextcloud settings.
 
