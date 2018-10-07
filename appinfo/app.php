@@ -20,3 +20,7 @@ $eventDispatcher->addListener('OCA\Files_Sharing::loadAdditionalScripts', functi
 	OCP\Util::addScript('files_texteditor', 'public-share');
 	OCP\Util::addStyle('files_texteditor', 'public-share');
 });
+
+// @mod Group4Layers 
+// Empty file to show additional menu in personal
+\OCP\App::registerPersonal('files_texteditor', 'lib/Settings/PersonalLegacy');

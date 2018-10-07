@@ -16,3 +16,4 @@
 /js/core/vendor/ace-builds/src-noconflict/ext-*
 !/js/core/vendor/ace-builds/src-noconflict/ext-modelist.js
 !/js/core/vendor/ace-builds/src-noconflict/ext-searchbox.js
+.idea

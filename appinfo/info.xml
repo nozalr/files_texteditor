@@ -14,4 +14,9 @@ More information is available in the text editor documentation.
 		<nextcloud min-version="14" max-version="14" />
 	</dependencies>
 	<namespace>FilesTextEditor</namespace>
+
+	<settings>
+		<personal>OCA\FilesTextEditor\Settings\Personal</personal>
+		<admin>OCA\FilesTextEditor\Settings\Admin</admin>
+	</settings>
 </info>

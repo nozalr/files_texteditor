@@ -33,6 +33,11 @@ var Files_Texteditor = {
 		size: null
 	},
 
+	/* @mod Group4Layers */
+	settings: {
+		'editor-keybindigns': 'normal'
+	},
+
 	/**
 	 * Stored the saving state
 	 */
@@ -442,6 +447,51 @@ var Files_Texteditor = {
 	},
 
 	/**
+	 * Support keyboard bindings for vim/emacs
+	 * based on settings (user or global)
+	 *
+	 * @mod Group4Layers
+	 * @author nozalr@group4layers.com
+	 **/
+	configureEditor: function() {
+		$.get(OC.generateUrl("/apps/files_texteditor/ajax/settings/user"))
+			.done(function(data) {
+				var keybindings = data && data["editor-keybindings"];
+				if (keybindings === "vim" || keybindings === "emacs") {
+					OC.addScript(
+						"files_texteditor",
+						"core/vendor/ace-builds/src-noconflict/keybinding-" +
+							keybindings,
+						function() {
+							aceEditor.setKeyboardHandler(
+								"ace/keyboard/" + keybindings
+							);
+
+							if (keybindings === "vim") {
+								window.ace.config.loadModule(
+									"ace/keyboard/vim",
+									function(module) {
+										var VimApi = module.CodeMirror.Vim;
+										VimApi.map("jk", "<Esc>", "insert");
+										VimApi.map("kj", "<Esc>", "insert");
+									}
+								);
+							}
+						}
+					);
+				}
+			})
+			.fail(function(jqXHR) {
+				OC.Notification.showTemporary(
+					t(
+						"files_texteditor",
+						"There was a problem configuring the editor."
+					)
+				);
+			});
+	},
+
+	/**
 	 * Configure the ACE editor
 	 */
 	configureACE: function(file) {
@@ -470,6 +520,9 @@ var Files_Texteditor = {
 				window.aceEditor.setTheme("ace/theme/clouds");
 			}
 		);
+
+		this.configureEditor(); // @mod Group4Layers
+
 		// Bind the edit event
 		window.aceEditor.getSession().on('change', this._onEdit.bind(this));
 		// Bind save trigger

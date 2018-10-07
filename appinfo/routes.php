@@ -21,21 +21,41 @@
 
 
 return [
-	'routes' => [
-		[
-			'name' => 'FileHandling#load',
-			'url' => '/ajax/loadfile',
-			'verb' => 'GET'
-		],
-		[
-			'name' => 'FileHandling#save',
-			'url' => '/ajax/savefile',
-			'verb' => 'PUT'
-		],
-		[
-			'name' => 'PublicFileHandling#load',
-			'url' => '/public/{token}',
-			'verb' => 'GET'
-		]
-	]
+    'routes' => [
+        [
+            'name' => 'FileHandling#load',
+            'url' => '/ajax/loadfile',
+            'verb' => 'GET'
+        ],
+        [
+            'name' => 'FileHandling#save',
+            'url' => '/ajax/savefile',
+            'verb' => 'PUT'
+        ],
+        [
+            'name' => 'PublicFileHandling#load',
+            'url' => '/public/{token}',
+            'verb' => 'GET'
+        ],
+        [
+            'name' => 'SettingsHandler#set',
+            'url' => '/ajax/settings/user',
+            'verb' => 'POST'
+        ],
+        [
+            'name' => 'SettingsHandler#get',
+            'url' => '/ajax/settings/user',
+            'verb' => 'GET'
+        ],
+        [
+            'name' => 'SettingsHandler#setGlobal',
+            'url' => '/ajax/settings/global',
+            'verb' => 'POST'
+        ],
+        [
+            'name' => 'SettingsHandler#getGlobal',
+            'url' => '/ajax/settings/global',
+            'verb' => 'GET'
+        ]
+    ]
 ];

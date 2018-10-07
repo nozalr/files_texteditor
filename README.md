@@ -13,6 +13,36 @@ Features:
  - Syntax checking
  - Responsive design (optimised on mobile and desktop)
 
+## Fork motivation (Group4Layers)
+
+Group4Layers® organization uses Emacs and Vim keybindings in many applications, and therefore, Nextcloud should provide a simple editor with these features.
+
+Also, we usually customize Vim with `jk` to escape from `insert` mode, although others use `kj` for the same purpose. This extension should modify the Vim configuration by default.
+
+Group4Layers doesn't want to force anyone to use a specific editor keybindings. Every member can establish its own personal configuration (editor keybindings).
+
+### Workflow
+
+Administrator can set the default editor keybindings (normal, vim or emacs).
+
+Every member can set its own editor keybindings (normal, vim or emacs).
+
+When a member is loading a file with the `files_texteditor`, it queries the personal settings and establish the editor keybindings accordingly.
+
+### Contributions
+
+Feel free to establish new settings or features. You can contribute with a PR or open an issue with your bugs/requests. We encourage you to add more features.
+
+Possible contributions:
+
+- translations for other languages (currently `es`, apart from english).
+- allow custom mimetypes/modes mapping for the editor (`org-mode` or custom modes).
+- create a save button for those that want to `save` manually but `ctrl-s` is overwritten by the keybindings.
+- create a mode switching select button, to manually establish the mode for the editor at runtime.
+- when another user is editing a file, open the same file in read-only / viewer mode.
+- ...
+
+
 ## Install
 Simply copy the `files_texteditor` folder into the `apps` directory and enable the app within the Nextcloud settings.
 
