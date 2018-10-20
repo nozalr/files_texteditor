@@ -44,13 +44,19 @@ Possible contributions:
 
 
 ## Install
+
 Simply copy the `files_texteditor` folder into the `apps` directory and enable the app within the Nextcloud settings.
 
+The signature file (`appinfo/signature.json`) has updated the hashes of the modified (or new) files, but it is not signed afterwards, therefore, not accepted by Nextcloud's `integrity:check-app`. We have used it in production using `'integrity.check.disabled' => true,` temporarily in `config/config.php`.
+
 ## Usage
-To use the editer, click on a [supported file](https://github.com/nextcloud/files_texteditor/blob/master/js/editor.js#L6) within the Files app and the file will be loaded into the editor. Saving is automatic, but can also be triggered manually with `Ctrl+S` or `Cmd+S`.
+
+To use the editor, click on a [supported file](https://github.com/nextcloud/files_texteditor/blob/master/js/editor.js#L6) within the Files app and the file will be loaded into the editor. Saving is automatic, but can also be triggered manually with `Ctrl+S` or `Cmd+S`.
 
 ## Contributors
+
 Maintainer: [Tom Needham](http://github.com/tomneedham)
+
 Past contributors: [Thomas Müller](http://github.com/deepdiver1975) [Robin Appelman](http://github.com/icewind) [Jörn Friedrich Dreyer](http://github.com/butonic) [Vincent Petry](http://github.com/pvince)
 
 
